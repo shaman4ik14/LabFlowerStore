@@ -5,11 +5,6 @@
 
 
 <module name="Checker">
-        
-    <module name="HiddenField" >
-    <property name="ignoreSetter" value="true" />
-    <property name="ignoreConstructorParameter" value="true" />
-    </module>
 
     <!-- Checks that property files contain the same keys. -->
     <module name="Translation"/>
