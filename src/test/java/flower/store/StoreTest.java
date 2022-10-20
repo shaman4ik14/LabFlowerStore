@@ -34,10 +34,10 @@ public class StoreTest {
         flowertwo.setFlowerType(FlowerType.TULIP);
         flowerone.setPrice(priceone);
         flowertwo.setPrice(pricetwo);
-        FlowerPack flowerPack1 = new FlowerPack(flowerone, quantityone);
-        FlowerPack flowerPack2 = new FlowerPack(flowertwo, quantitytwo);
-        bucketone.add(flowerPack1);
-        buckettwo.add(flowerPack2);
+        FlowerPack flowerPackone = new FlowerPack(flowerone, quantityone);
+        FlowerPack flowerPacktwo = new FlowerPack(flowertwo, quantitytwo);
+        bucketone.add(flowerPackone);
+        buckettwo.add(flowerPacktwo);
         flowerStore.addbucket(bucketone);
         flowerStore.addbucket(buckettwo);
         ArrayList<FlowerBucket> resultone = new ArrayList<>();

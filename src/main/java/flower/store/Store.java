@@ -3,7 +3,7 @@ package flower.store;
 import java.util.ArrayList;
 
 public class Store {
-    ArrayList<FlowerBucket> storeBuckets = new ArrayList<>();
+    private ArrayList<FlowerBucket> storeBuckets = new ArrayList<>();
 
     //search and return all buckets with given flowers(like arraylist)
     public ArrayList<FlowerBucket> searchbucket(FlowerType flowers) {

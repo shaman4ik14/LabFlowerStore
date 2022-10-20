@@ -13,8 +13,8 @@ public class Flower {
     private double price = 0;
     private FlowerType flowerType; //represent the type of Flower (FlowerType)
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrice(double newprice) {
+        price = newprice;
     }
 
     public String getColor() {
