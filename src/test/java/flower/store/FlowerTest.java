@@ -32,7 +32,7 @@ public class FlowerTest {
     }
 
     @Test
-    public void testType(){
+    public void testType() {
         FlowerType type = FlowerType.CHAMOMILE;
         flower.setFlowerType(type);
         Assertions.assertEquals(FlowerType.CHAMOMILE, flower.getFlowerType());

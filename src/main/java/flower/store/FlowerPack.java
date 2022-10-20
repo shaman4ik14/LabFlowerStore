@@ -7,7 +7,7 @@ public class FlowerPack {
     @Getter
     private final int quantity;
 
-    FlowerPack(Flower flower, int quantity){
+    FlowerPack(Flower flower, int quantity) {
         this.flower = flower;
         this.quantity = quantity;
     }

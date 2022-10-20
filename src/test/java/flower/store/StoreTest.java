@@ -13,38 +13,40 @@ public class StoreTest {
     private static final int MAX_PRICE  = 100;
 
     private Store flowerStore;
-    private FlowerBucket Bucket1;
-    private FlowerBucket Bucket2;
+    private FlowerBucket bucketone;
+    private FlowerBucket buckettwo;
 
     @BeforeEach
     public void init() {
         flowerStore = new Store();
-        Bucket1 = new FlowerBucket();
-        Bucket2 = new FlowerBucket();
+        bucketone = new FlowerBucket();
+        buckettwo = new FlowerBucket();
     }
 
     @Test
-    public void testContain(){
-        int price1 = RANDOM_GENERATOR.nextInt(MAX_PRICE);
-        int quantity1 = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        int price2 = RANDOM_GENERATOR.nextInt(MAX_PRICE);
-        int quantity2 = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        Flower flower1 = new Rose();
-        Flower flower2 = new Flower();
-        flower2.setFlowerType(FlowerType.TULIP);
-        flower1.setPrice(price1);
-        flower2.setPrice(price2);
-        FlowerPack flowerPack1 = new FlowerPack(flower1, quantity1);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, quantity2);
-        Bucket1.add(flowerPack1);
-        Bucket2.add(flowerPack2);
-        flowerStore.add_bucket(Bucket1);
-        flowerStore.add_bucket(Bucket2);
-        ArrayList<FlowerBucket> result1 = new ArrayList<>();
-        ArrayList<FlowerBucket> result2 = new ArrayList<>();
-        result1.add(Bucket1);
-        result2.add(Bucket2);
-        Assertions.assertEquals(result1, flowerStore.search_bucket(FlowerType.ROSE));
-        Assertions.assertEquals(result2, flowerStore.search_bucket(FlowerType.TULIP));
+    public void testContain() {
+        int priceone = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int quantityone = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
+        int pricetwo = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+        int quantitytwo = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
+        Flower flowerone = new Rose();
+        Flower flowertwo = new Flower();
+        flowertwo.setFlowerType(FlowerType.TULIP);
+        flowerone.setPrice(priceone);
+        flowertwo.setPrice(pricetwo);
+        FlowerPack flowerPack1 = new FlowerPack(flowerone, quantityone);
+        FlowerPack flowerPack2 = new FlowerPack(flowertwo, quantitytwo);
+        bucketone.add(flowerPack1);
+        buckettwo.add(flowerPack2);
+        flowerStore.addbucket(bucketone);
+        flowerStore.addbucket(buckettwo);
+        ArrayList<FlowerBucket> resultone = new ArrayList<>();
+        ArrayList<FlowerBucket> resulttwo = new ArrayList<>();
+        resultone.add(bucketone);
+        resulttwo.add(buckettwo);
+        Assertions.assertEquals(resultone,
+                flowerStore.searchbucket(FlowerType.ROSE));
+        Assertions.assertEquals(resulttwo,
+                flowerStore.searchbucket(FlowerType.TULIP));
     }
 }
